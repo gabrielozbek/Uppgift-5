@@ -23,7 +23,13 @@ namespace EnkelKalkylator
 
         public double division(double num1, double num2)
         {
-            return num1 / num2;
+            if (num2 == 0) // Vi kollar om vår num2 är noll. Om det är det returnar vi 0 division med 0 blir noll.
+            {
+                return 0;
+            }else
+            {
+                return num1 / num2;
+            }
         }
     }
     class Program
@@ -39,6 +45,7 @@ namespace EnkelKalkylator
 
             Console.WriteLine("\nAnge första talet: ");
             double num1 = Convert.ToDouble(Console.ReadLine());
+            
 
             Console.WriteLine("Ange andra talet: ");
             double num2 = Convert.ToDouble(Console.ReadLine());
