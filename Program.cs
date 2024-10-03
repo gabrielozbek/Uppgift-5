@@ -35,5 +35,6 @@
 
         Console.WriteLine($"Resultat: {result}");
         Console.ReadKey();
+        //test
     }
 }
