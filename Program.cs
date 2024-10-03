@@ -6,22 +6,22 @@ namespace EnkelKalkylator
 
     public class Kalk
     {
-        public int addition(int num1, int num2)
+        public double addition(double num1, double num2)
         {
             return num1 + num2;
         }
 
-        public int substraction(int num1, int num2)
+        public double substraction(double num1, double num2)
         {
             return num1 - num2;
         }
 
-        public int multiplication(int num1, int num2)
+        public double multiplication(double num1, double num2)
         {
             return num1 * num2;
         }
 
-        public int division(int num1, int num2)
+        public double division(double num1, double num2)
         {
             return num1 / num2;
         }
@@ -48,61 +48,26 @@ namespace EnkelKalkylator
             switch (operation)
             {
                 case '+':
-                    result = num1 + num2;
+                    result = calc.addition(num1, num2);
                     break;
                 case '-':
-                    result = num1 - num2;
+                    result = calc.substraction(num1, num2);
                     break;
                 case '*':
-                    result = num1 * num2;
+                    result = calc.multiplication(num1, num2);
                     break;
                 case '/':
-                    result = num1 / num2;
+                    result = calc.division(num1, num2);
                     break;
                 default:
                     Console.WriteLine("Ogiltig operation.");
                     return;
-                    switch (operation)
-                    {
-                        case '+':
-                            result = num1 + num2;
-                            break;
-                        case '-':
-                            result = num1 - num2;
-                            break;
-                        case '*':
-                            result = num1 * num2;
-                            break;
-                        case '/':
-                            if (num2 != 0)
-                            {
-                                result = num1 / num2;
-                            }
-                            else
-                            {
-                                Console.WriteLine("Fel: Division med noll är inte tillåten.");
-                                return;
-                            }
-                            break;
-                        default:
-                            Console.WriteLine("Ogiltig operation.");
-                            return;
-                    }
-                    Console.WriteLine($"Resultat: {result}");
-                    Console.ReadKey();
+                    
             }
 
             Console.WriteLine($"Resultat: {result}");
             Console.ReadKey();
-            static double LäsInTal()
-            {
-                double tal;
-                while (!double.TryParse(Console.ReadLine(), out tal))
-                {
-                    Console.WriteLine("Felaktig inmatning, ange ett giltigt tal:");
-                }
-                return tal;
-            }
+
         }
     }
 }
